@@ -1,0 +1,130 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "REST API For Book",
+    "description" : "REST API For Book"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/book/v1" : {
+      "post" : {
+        "summary" : "createBook",
+        "description" : "",
+        "operationId" : "createBook",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Book"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Book to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "getBookById",
+        "description" : "",
+        "operationId" : "getBookById",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a Book to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "updateBook",
+        "description" : "",
+        "operationId" : "updateBook",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Book"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "deleteBook",
+        "description" : "",
+        "operationId" : "deleteBook",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Book" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "isbn" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "authorName" : {
+          "type" : "string"
+        },
+        "releaseDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "vintage" : {
+          "type" : "boolean"
+        },
+        "signed" : {
+          "type" : "boolean"
+        },
+        "price" : {
+          "type" : "number"
+        }
+      }
+    }
+  }
+}

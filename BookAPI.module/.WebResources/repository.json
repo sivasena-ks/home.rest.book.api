@@ -1,0 +1,17 @@
+{
+    "records": [],
+    "resources": [
+        {
+            "location": "Service Descriptors/bookapi.module.book-book.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/bookapi.module.api.book-book.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/bookapi.module.api.books-books.json",
+            "type": "generated"
+        }
+    ]
+}

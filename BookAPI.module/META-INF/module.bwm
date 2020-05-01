@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_jpOCgIteEeqZAZ2RP-K7aw" targetNamespace="http://tns.tibco.com/bw/composite/BookAPI.module" name="BookAPI.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_fi16oYtsEeqZAZ2RP-K7aw" name="v1-books" promote="Componentbooks/v1-books">
+    <sca:interface.wsdl xmi:id="_fi16pYtsEeqZAZ2RP-K7aw" interface="http://xmlns.example.com/20200501105747PLT#wsdl.interface(v1-books)" scaext:wsdlLocation="../Processes/bookapi/module/api/books.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_fi2hsItsEeqZAZ2RP-K7aw" name="RestService" path="/v1/books" docBasePath="http://localhost:7777/BookAPI.module" docResourcePath="books" basePath="/" connector="bookapi.module.book" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/bookapi.module.api.books-books.json">
+      <operation xmi:id="_fi3IwItsEeqZAZ2RP-K7aw" operationName="post" nickname="createBook" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_fi3IwYtsEeqZAZ2RP-K7aw" operationName="get" nickname="getBooks" httpMethod="GET" responseStyle="element" requestStyle="element">
+        <parameters xmi:id="_DvNwwItuEeqZAZ2RP-K7aw">
+          <parameterMapping xmi:id="_DvNwwYtuEeqZAZ2RP-K7aw" parameterName="authorName" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_F4JMIItuEeqZAZ2RP-K7aw" parameterName="releaseDate" parameterType="Query" dataType="string#date"/>
+          <parameterMapping xmi:id="_Hxaa4ItuEeqZAZ2RP-K7aw" parameterName="id" parameterType="Query" dataType="string" array="true"/>
+          <parameterMapping xmi:id="_KQP00ItuEeqZAZ2RP-K7aw" parameterName="pageNumber" parameterType="Query" dataType="integer#int32" required="true"/>
+          <parameterMapping xmi:id="_SPSH8ItuEeqZAZ2RP-K7aw" parameterName="recordsPerPage" parameterType="Query" dataType="integer#int32" required="true"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <advancedConfig xmi:id="_fi2hsYtsEeqZAZ2RP-K7aw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_fi3IwotsEeqZAZ2RP-K7aw" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_qPSkUItuEeqZAZ2RP-K7aw" name="books" promote="Componentbooks/books">
+    <sca:interface.wsdl xmi:id="_qPSkVItuEeqZAZ2RP-K7aw" interface="http://xmlns.example.com/20200501105747PLT#wsdl.interface(books)" scaext:wsdlLocation="../Processes/bookapi/module/api/books.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_qPTLYItuEeqZAZ2RP-K7aw" name="RestService1" path="/v1/books/{id}" docBasePath="http://localhost:7777/BookAPI.module" docResourcePath="books" basePath="/" connector="bookapi.module.book" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/bookapi.module.api.books-books.json">
+      <operation xmi:id="_qPTycItuEeqZAZ2RP-K7aw" operationName="get" nickname="getBooks" httpMethod="GET" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_qPTycYtuEeqZAZ2RP-K7aw" operationName="put" nickname="updateBooks" httpMethod="PUT" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_qPTycotuEeqZAZ2RP-K7aw" operationName="delete" nickname="deleteBooks" httpMethod="DELETE" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_y2EM4ItuEeqZAZ2RP-K7aw">
+        <parameterMapping xmi:id="_y2EM4YtuEeqZAZ2RP-K7aw" parameterName="id" parameterType="Path" dataType="string" required="true"/>
+      </parameters>
+      <advancedConfig xmi:id="_qPTLYYtuEeqZAZ2RP-K7aw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_qPTyc4tuEeqZAZ2RP-K7aw" bindingName="RestService1"/>
+  </sca:service>
+  <sca:property xmi:id="_kfuzwIteEeqZAZ2RP-K7aw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kgH1UIteEeqZAZ2RP-K7aw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kgNU4IteEeqZAZ2RP-K7aw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kgS0cIteEeqZAZ2RP-K7aw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kgY7EIteEeqZAZ2RP-K7aw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kgdzkIteEeqZAZ2RP-K7aw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kgdzkYteEeqZAZ2RP-K7aw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kgrO8IteEeqZAZ2RP-K7aw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kgsdEIteEeqZAZ2RP-K7aw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_fi1TkItsEeqZAZ2RP-K7aw" name="Componentbooks" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_fi1TkYtsEeqZAZ2RP-K7aw" processName="bookapi.module.api.books"/>
+    <sca:service xmi:id="_fi1TkotsEeqZAZ2RP-K7aw" name="v1-books">
+      <sca:interface.wsdl xmi:id="_fi16oItsEeqZAZ2RP-K7aw" interface="http://xmlns.example.com/20200501105747PLT#wsdl.interface(v1-books)" scaext:wsdlLocation="../Processes/bookapi/module/api/books.bwp"/>
+    </sca:service>
+    <sca:service xmi:id="_qPR9QItuEeqZAZ2RP-K7aw" name="books">
+      <sca:interface.wsdl xmi:id="_qPR9QYtuEeqZAZ2RP-K7aw" interface="http://xmlns.example.com/20200501105747PLT#wsdl.interface(books)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

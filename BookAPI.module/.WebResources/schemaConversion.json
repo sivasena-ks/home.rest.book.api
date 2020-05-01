@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/BookAPI.module/Service Descriptors/bookapi.module.book-book.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Books"
+    },
+    {
+        "jsonSchemaLocation": "/BookAPI.module/Service Descriptors/bookapi.module.api.books-books.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Books"
+    }
+]}
