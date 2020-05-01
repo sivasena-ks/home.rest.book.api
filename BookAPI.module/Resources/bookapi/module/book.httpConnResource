@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:httpconnector="http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_AaEXsYtfEeqZAZ2RP-K7aw" name="bookapi.module.book" type="httpconnector:HttpConnectorConfiguration">
   <jndi:configuration xsi:type="httpconnector:HttpConnectorConfiguration" xmi:id="_AaEXsotfEeqZAZ2RP-K7aw">
-    <substitutionBindings xmi:id="_AaLscItfEeqZAZ2RP-K7aw" template="host" propName="BW.HOST.NAME"/>
+    <substitutionBindings xmi:id="_AaLscItfEeqZAZ2RP-K7aw" template="host" propName="hostName"/>
+    <substitutionBindings xmi:id="_eJ_eEIt8EeqB-sC5M8CJJA" template="port" propName="port"/>
   </jndi:configuration>
 </jndi:namedResource>

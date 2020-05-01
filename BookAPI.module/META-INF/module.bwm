@@ -53,6 +53,8 @@
   <sca:property xmi:id="_kgdzkYteEeqZAZ2RP-K7aw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_kgrO8IteEeqZAZ2RP-K7aw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_kgsdEIteEeqZAZ2RP-K7aw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_XbOgAIt8EeqB-sC5M8CJJA" name="hostName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ZWw_oIt8EeqB-sC5M8CJJA" name="port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_fi1TkItsEeqZAZ2RP-K7aw" name="Componentbooks" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_fi1TkYtsEeqZAZ2RP-K7aw" processName="bookapi.module.api.books"/>
     <sca:service xmi:id="_fi1TkotsEeqZAZ2RP-K7aw" name="v1-books">
